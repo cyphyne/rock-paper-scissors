@@ -11,8 +11,6 @@ function computerPlay() {
   }
 };
  
-let playerScore = 0;
-let computerScore = 0;
 
 //Function that plays one round using the player and computer's input and returns the winner of the round
 function playRound(playerSelection, computerSelection) {
@@ -23,10 +21,10 @@ function playRound(playerSelection, computerSelection) {
     return "Your sunshine has been blocked by clouds! :(";
   } else if (playerSelection === "sun" && computerSelection === "wind") {
     playerScore += 1;
-    return "The sun has scared the wind into hiding, sunshine has prevailed! :)";
+    return "The wind doesn't like being out in hot weather, sunshine has prevailed! :)";
   } else if (playerSelection === "cloud" && computerSelection === "sun") {
     playerScore += 1;
-    return "Clouds have covered the warm sun, there is only nice shade! :)";
+    return "Clouds have covered the hot sun, there is only nice shade! :)";
   } else if (playerSelection === "cloud" && computerSelection === "wind") {
     computerScore += 1;
     return "Oh no! Your clouds have been puffed away! :(";
@@ -52,9 +50,13 @@ console.log(playRound(playerSelection, computerSelection));
 
 //Function that plays a five round game that keeps score and reports a winner/loser at the end
 
+let playerScore = 0;
+let computerScore = 0;
+
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound(playerSelection, computerSelection)
         if (playerScore)
     }
-}
+};
+

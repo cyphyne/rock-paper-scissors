@@ -5,33 +5,53 @@
       <title>&#9728 &#9729 &#x1f32b</title>
       <link rel="stylesheet" href="style.css">
       <link rel="icon" href="favicon.png" type="image/icon type">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Fredoka+One&family=Gluten:wght@700;800;900&display=swap');
+        </style>
     </head>
     <body>
         <script src="script.js"></script>
         <header>
-            <h1> Sun Cloud Wind</h1>
+            <h1> SUN &#x25CB CLOUD &#x25CB WIND</h1>
         </header>              
 
-        <h2>Best out of five wins!</h2>
+        <h2>best out of five wins!</h2>
         <h3>What's your pick?</h3>
+
+        <div class="options">
+            <div class="options" id="sun">
+                <button>
+                <img src="sun.png" alt="cute sun bear" width='200'>
+                </button>
+            </div>
+            <div class="options" id="cloud">
+                <button>
+                    <img src="cloud.png" alt="cute cloud cat" width='175'>
+                    </button>
+                </div>
+            <div class="options" id="wind">
+                <button>
+                    <img src="wind.png" alt="cute wind mouse" width='300'>
+                    </button>
+                </div>
+        </div>
 
         <div class="result">
             <p>You've blown away the clouds, a win! &#9786</p>
         </div>
 
-        <div class="options">
-            <div class="options" id="sun">&#9728</div>
-            <div class="options" id="cloud">&#9729</div>
-            <div class="options" id="wind">&#x1f32b</div>
-        </div>
-
         <div class="score-box">
             <div id="player-tag">Player</div>
-            <div id="god-tag">God</div>
+            <div id="computer-tag">God</div>
             <div id="player-score">0</div> 
-            <div id="god-score">0</div>
+            <div id="computer-score">0</div>
         </div>
-
-       
+     <footer>
+         <p>Copyright
+             <a href="https://github.com/cyphyne">
+            <button >Cyphyne</button>
+        </a>
+         </p>
+     </footer> 
     </body>
-</html>
+</html> 
