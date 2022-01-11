@@ -6,6 +6,8 @@ body {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    
+    align-items: center;
     text-align: center;
 }
 
@@ -29,32 +31,31 @@ h2 {
     text-align: center;
     font-size: 20px;
     margin-bottom: 45px;
-   
 
-   
 }
 
 h3 {
     font-family: 'Gluten', "cursive";
     color: #dff5f6;
     font-size: 35px;
-s
+
 }
 
 .options {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    
+    
 }
 
-#sun {
-    width: 25%;
-    height: auto;
-}
+/*Score*/
 
 .score-box {
     display: flex;
     flex-direction: column;
+    color: rgb(219, 242, 248);
 
 }
 
@@ -78,12 +79,59 @@ button:hover {
     transition: 200ms linear;
 }
 
+/* Game result msg*/
 .result {
     font-family: "Gluten", "Concert One", sans-serif;
-    margin-top: 25px;
+    
+    margin-bottom: 35px;
+    color:rgb(220, 240, 243);
+    font-size: x-large;
 }
 
 .score-box {
-    font-family: "Gluten", "Concert One", "cursive";
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-style: double; 
+   border-radius: 25px;
+   width: 35%;
+   height: auto;
+   padding: 25px;
+   font-family: "Concert One", "Gluten", "cursive";
+   font-size: 25px;
+}
+
+#break {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#tag {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.name-tag, #computer-score, #player-score {
+    text-align: center;
+    margin: 15px;
+    
+}
+
+/*Footer*/
+
+.bot {
+    text-align: center;
+    margin-top: 85px;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+
+footer, #link, a:visited {
+    text-decoration: none;
+    font-family: "Concert One", "Gluten", "cursive";
+    color:#54b2cc9c;
 }
 
