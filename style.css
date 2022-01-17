@@ -88,7 +88,7 @@ button:hover {
     font-size: x-large;
 }
 
-.score-box {
+.score-board {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -104,7 +104,6 @@ button:hover {
 #break {
     display: flex;
     flex-direction: row;
-    
 }
 
 #tag {
@@ -115,9 +114,7 @@ button:hover {
 }
 
 .name-tag, #computer-score, #player-score {
-    text-align: center;
     margin: 15px;
-    
 }
 
 /*Footer*/
