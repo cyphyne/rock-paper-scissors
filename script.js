@@ -1,12 +1,12 @@
 
 let playerScore = 0;
 let computerScore = 0;
-let remainingMoves = 0;
+
 
 
 // Creating a function that allows the computer to randomly select rock, paper, or scissors.
-let randomNum = Math.floor(Math.random()*3 +1);
 
+const randomNum = Math.floor(Math.random()*3 +1);
 function computerPlay() {
   if (randomNum === 1) {
     return "sun";
@@ -17,42 +17,61 @@ function computerPlay() {
   }
 };
  
-
+let computerSelection = computerPlay(); 
 
 //Function that plays one round using the player and computer's input and returns the winner of the round
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return "It's a tie! There is only harmony!";
-  } 
-  else if (playerSelection === "sun" && computerSelection === "cloud") {
-    computerScore++;  
-    return "Your sunshine has been blocked by clouds! :(";
-  } 
-  else if (playerSelection === "sun" && computerSelection === "wind") {
-    playerScore++;
-    return "The wind doesn't like being out in hot weather, sunshine has prevailed! :)";
-  } 
-  else if (playerSelection === "cloud" && computerSelection === "sun") {
-    playerScore++;
-    return "Clouds have covered the hot sun, there is only nice shade! :)";
-  } 
-  else if (playerSelection === "cloud" && computerSelection === "wind") {
-    computerScore++;
-    return "Oh no! Your clouds have been puffed away! :(";
+    resultDiv.innerHTML = "It's a tie! There is only harmony!";
+
   } 
   else if (playerSelection === "wind" && computerSelection === "cloud") {
-    playerScore++;
-    return "The wind has blown away the clouds, a win! :)";
+    win();
+    checkWinner();
+    resultDiv.innerHTML = "The wind has blown away the clouds, a win! :)";
+   
   } 
-  else if (playerSelection === "wind" && computerSelection === "sun") {
-    computerScore++;
-    return "The wind doesn't like to be warm, defeat! :(";
+  else if (playerSelection === "sun" && computerSelection === "wind") {
+    win();
+    checkWinner();
+    resultDiv.innerHTML = "The wind doesn't like being out in hot weather, sunshine has prevailed! :)";
+    
+  } 
+  else if (playerSelection === "cloud" && computerSelection === "sun") {
+    win();
+    checkWinner();
+    resultDiv.innerHTML = "Clouds have covered the hot sun, there is only nice shade! :)";
+  } 
+  else if (playerSelection === "cloud" && computerSelection === "wind") {
+    loss();
+    checkWinner();
+    resultDiv.innerHTML = "Oh no! Your clouds have been puffed away! :(";
+  } 
+  else if (playerSelection === "sun" && computerSelection === "cloud") { 
+    loss();
+    checkWinner();
+    resultDiv.innerHTML = "Your sunshine has been blocked by clouds! :(";
+  } 
+   else if (playerSelection === "wind" && computerSelection === "sun") {
+    loss();
+    checkWinner();
+    resultDiv.innerHTML = "The wind doesn't like to be warm, defeat! :(";
   }; 
 
 }
 
+function win() {
+  playerScore++;
+  playerScoreNum.innerHTML = playerScore;
+  computerScoreNum.innerHTML = computerScore;
+};
 
-let computerSelection = computerPlay();
+function loss(playerSelection, computerSelection) {
+  computerScore++;
+  playerScoreNum.innerHTML = playerScore;
+  computerScoreNum.innerHTML = computerScore;
+};
+
 
 const playerScoreNum = document.getElementById("player-score");
 const computerScoreNum = document.getElementById("computer-score");
@@ -64,20 +83,33 @@ const scoreBoardDiv = document.querySelector(".score-board");
 
 
 
-//Function that plays a five round game that declares winner
+//Five round game that declares winner
 
-sunButton.addEventListener('click', function() {
-  game("sun");
-});
-cloudButton.addEventListener('click', function() {
+function main() {
+  sunButton.addEventListener('click', function() {
+  game("sun"); 
+  });
+  cloudButton.addEventListener('click', function() {
   game("cloud");
-});
-windButton.addEventListener('click', function() {
+    });
+  windButton.addEventListener('click', function() {
   game("wind");
-});
-
+  });
+};
 
 function game(playerSelection) {
-  console.log(playRound(playerSelection, computerSelection));
-
+  console.log(`You chose: ${playerSelection}`);
+  console.log(`Computer chose: ${computerSelection}`);
+  playRound(playerSelection, computerSelection);
 };
+
+
+function checkWinner() {
+  if (playerScore === 5) {
+    return "You won! :D";
+  } else if (computerScore === 5) {
+    return "Computer won D:";
+  }
+};
+
+main();
