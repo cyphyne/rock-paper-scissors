@@ -26,13 +26,13 @@
             <div class="options" id="cloud">
                 <button>
                     <img src="cloud.png" alt="cute cloud cat" width='170'>
-                    </button>
-                </div>
+                </button>
+            </div>
             <div class="options" id="wind">
                 <button>
                     <img src="wind.png" alt="cute wind mouse" width='275'>
-                    </button>
-                </div>
+                </button>
+            </div>
         </div>
 
         <div class="result">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="score-board">
-            <div id="comp-choice">Computer Chose: &#x2601</div>
+            <div id="comp-choice">Computer Chose: <span id="computer-icon"> </span></div>
             <div id="break">
                 <p>&#8226</p>  <p>&#8226</p> <p>&#8226</p>
             </div>
@@ -49,6 +49,17 @@
                 <div id="player-score">0</div>
                 <div class="name-tag">Computer:</div>
                 <div id="computer-score">0</div>
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-content">
+                 <div id="end-result">
+                     <p> </p>
+                </div>
+                <div id="refresh">
+                    <button id= "reset-btn" onClick="restartGame()">Play again?</button>
+                </div>
             </div>
         </div>
 
