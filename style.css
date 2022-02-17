@@ -128,6 +128,10 @@ button:hover {
     
 }
 
+.modal.on {
+    display: flex;
+}
+
 .modal-content {
     background-image: linear-gradient(#92e6d1 ,#339eb9 );
     margin: 10% auto;

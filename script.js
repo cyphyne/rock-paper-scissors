@@ -10,8 +10,8 @@ const cloudButton = document.getElementById("cloud");
 const resultDiv = document.querySelector(".result");
 const scoreBoardDiv = document.querySelector(".score-board");
 const computerIcon = document.getElementById("computer-icon");
-const modal = document.getElementById("modal");
-const endResult = document.querySelector("end-result");
+const modal = document.getElementById("display-mod");
+const endResult = document.getElementById("end-result");
 
 //Computer Choice
 function computerPlay() {
@@ -86,33 +86,33 @@ function game(playerSelection) {
   checkWinner();
     }
 
-// Event Listeners
-function main() {
+ main();
+
+ 
+ function main() {
   sunButton.addEventListener('click', () => game("sun"));
   cloudButton.addEventListener('click', () => game("cloud"));
   windButton.addEventListener('click', () => game("wind"));
 }
 
 // Declares Winner
-function checkWinner(playerScore, computerScore) {
-  endGameModal();
+function checkWinner() {
   if (playerScore === 5) {
-    endResult.innerHTML =  "You won! ☺"
+    openModal();
+    return endResult.innerHTML =  "You won! (❁´▽`❁)";
   } else if (computerScore === 5) {
-    endResult.innerHTML = "Computer won ☹"
+    openModal();
+    return endResult.innerHTML = "You lost! ｡:ﾟ(｡ﹷ ‸ ﹷ ✿)";
   } 
+  return
 }
-
-main();
 
 // End Game Modal
 
-const restartGame = () => {
-  window.location.reload();
-  modal.style.display = "none";
+const openModal = () => {
+  modal.classList.add('on');
 }
 
-function endGameModal() {
-  modal.style.display = "flex";
-  restartGame();
+const restartGame = () => {
+  window.location.reload();
 }
